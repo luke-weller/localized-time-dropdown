@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, FC } from "react";
+import { useState, useEffect, useCallback, FC, useMemo } from "react";
 import { LocalizedTimeDropdownProps } from "../interfaces";
 import "../styles.css";
 
@@ -6,11 +6,19 @@ const LocalizedTimeDropdown: FC<LocalizedTimeDropdownProps> = ({ items }) => {
   const [selectedLocation, setSelectedLocation] = useState<string>("New York");
   const [currentTime, setCurrentTime] = useState<string>("");
 
-  const locationToTimeZone: { [key: string]: string } = {
-    "New York": "America/New_York",
-    London: "Europe/London",
-    "São Paulo": "America/Sao_Paulo",
-  };
+  // https://reactjs.org/docs/hooks-reference.html#usememo
+  // I am using useMemo to memoize the locationToTimeZone object.
+  // This object is a mapping of location names to their respective time zones.
+  // Since this object is not dependent on any state or props, it will not change between re-renders.
+  // By memoizing it, we can ensure that the object is only created once and reused across re-renders,
+  // which can help improve performance.
+  const locationToTimeZone: { [key: string]: string } = useMemo(() => {
+    return {
+      "New York": "America/New_York",
+      London: "Europe/London",
+      "São Paulo": "America/Sao_Paulo",
+    };
+  }, []);
 
   const logCurrentTime = useCallback(
     (location: string) => {
