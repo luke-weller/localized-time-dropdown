@@ -31,7 +31,7 @@ const LocalizedTimeDropdown: FC<LocalizedTimeDropdownProps> = ({ items }) => {
   );
 
   useEffect(() => {
-    logCurrentTime(selectedLocation); // Call immediately on mount
+    logCurrentTime(selectedLocation);
     const interval = setInterval(() => {
       logCurrentTime(selectedLocation);
     }, 1000);
