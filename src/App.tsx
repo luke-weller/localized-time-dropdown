@@ -1,6 +1,7 @@
 import { useState, FC } from "react";
 import LocationSelect from "./components/LocationSelect/LocationSelect";
 import ClockDisplay from "./components/ClockDisplay/ClockDisplay";
+import "./App.css";
 
 const App: FC = () => {
   const [selectedLocation, setSelectedLocation] = useState<string>("New York");

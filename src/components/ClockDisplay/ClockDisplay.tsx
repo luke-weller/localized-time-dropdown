@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, FC, useMemo } from "react";
-import "../../styles.css";
+import "./ClockDisplay.css";
 
 interface ClockDisplayProps {
   location: string;

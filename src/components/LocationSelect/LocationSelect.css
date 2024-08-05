@@ -1,0 +1,20 @@
+.location-select-container {
+  margin-bottom: 20px;
+}
+
+.location-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #000;
+  background-color: #fff;
+  -webkit-appearance: none; /* Remove default styling in Safari */
+  -moz-appearance: none; /* Remove default styling in Firefox */
+  appearance: none; /* Remove default styling in modern browsers */
+}
+
+.location-select:focus {
+  outline: none;
+}

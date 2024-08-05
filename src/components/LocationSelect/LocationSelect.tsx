@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import "../../styles.css";
+import "./LocationSelect.css";
 
 interface LocationSelectProps {
   selectedLocation: string;
