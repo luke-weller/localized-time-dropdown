@@ -1,4 +1,4 @@
-/* styles.css */
+/* General styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -21,12 +21,12 @@ body {
   min-width: 300px;
 }
 
-.dropdown-container,
-.time-container {
+/* LocationSelect styles */
+.location-select-container {
   margin-bottom: 20px;
 }
 
-select {
+.location-select {
   width: 100%;
   padding: 10px;
   border-radius: 4px;
@@ -39,16 +39,13 @@ select {
   appearance: none; /* Remove default styling in modern browsers */
 }
 
-select:focus {
+.location-select:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.time-display {
-  font-family: "Courier New", Courier, monospace;
+/* ClockDisplay styles */
+.clock-display {
   font-size: 24px;
   font-weight: bold;
-  color: #000;
-  padding: 10px;
+  text-align: center;
 }

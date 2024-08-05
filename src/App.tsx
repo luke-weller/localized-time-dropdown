@@ -1,16 +1,24 @@
-import LanguageSelectionComponent from "./components/LocalizedTimeDropdown";
-import "./App.css";
+import { useState, FC } from "react";
+import LocationSelect from "./components/LocationSelect/LocationSelect";
+import ClockDisplay from "./components/ClockDisplay/ClockDisplay";
 
-function App() {
-  // List of language codes for the dropdown
-  const items = ["en-US", "en-GB", "pt-BR"];
+const App: FC = () => {
+  const [selectedLocation, setSelectedLocation] = useState<string>("New York");
 
   return (
-    <div className="App">
-      {/* LanguageSelectionComponent with the list of language codes */}
-      <LanguageSelectionComponent items={items} />
+    <div>
+      <div className="container">
+        <LocationSelect
+          selectedLocation={selectedLocation}
+          onLocationChange={setSelectedLocation}
+        />
+      </div>
+      <div className="container">
+        <p>Showing time for {selectedLocation}</p>
+        <ClockDisplay location={selectedLocation} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
