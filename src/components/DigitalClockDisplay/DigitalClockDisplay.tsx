@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback, FC, useMemo } from "react";
-import "./ClockDisplay.css";
+import "./DigitalClockDisplay.css";
 
 interface ClockDisplayProps {
   location: string;
 }
 
-const ClockDisplay: FC<ClockDisplayProps> = ({ location }) => {
+const DigitalClockDisplay: FC<ClockDisplayProps> = ({ location }) => {
   const [currentTime, setCurrentTime] = useState<string>("");
 
   const locationToTimeZone: { [key: string]: string } = useMemo(() => {
@@ -27,6 +27,7 @@ const ClockDisplay: FC<ClockDisplayProps> = ({ location }) => {
       hour12: false,
     }).format(now);
     setCurrentTime(formattedTime);
+    console.log(`Current time in ${location}: ${formattedTime}`);
   }, [location, locationToTimeZone]);
 
   useEffect(() => {
@@ -40,4 +41,4 @@ const ClockDisplay: FC<ClockDisplayProps> = ({ location }) => {
   return <div className="clock-display">{currentTime}</div>;
 };
 
-export default ClockDisplay;
+export default DigitalClockDisplay;

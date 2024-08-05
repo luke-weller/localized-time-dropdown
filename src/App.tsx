@@ -1,23 +1,21 @@
-import { useState, FC } from "react";
+import { FC, useState } from "react";
 import LocationSelect from "./components/LocationSelect/LocationSelect";
-import ClockDisplay from "./components/ClockDisplay/ClockDisplay";
+import DigitalClockDisplay from "./components/DigitalClockDisplay/DigitalClockDisplay";
+import AnalogClockDisplay from "./components/AnalogClockDisplay/AnalogClockDisplay";
 import "./App.css";
 
 const App: FC = () => {
   const [selectedLocation, setSelectedLocation] = useState<string>("New York");
 
   return (
-    <div>
-      <div className="container">
-        <LocationSelect
-          selectedLocation={selectedLocation}
-          onLocationChange={setSelectedLocation}
-        />
-      </div>
-      <div className="container">
-        <p>Showing time for {selectedLocation}</p>
-        <ClockDisplay location={selectedLocation} />
-      </div>
+    <div className="container">
+      <LocationSelect
+        selectedLocation={selectedLocation}
+        onLocationChange={setSelectedLocation}
+      />
+
+      <AnalogClockDisplay location={selectedLocation} />
+      <DigitalClockDisplay location={selectedLocation} />
     </div>
   );
 };
