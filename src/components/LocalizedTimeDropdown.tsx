@@ -6,12 +6,6 @@ const LocalizedTimeDropdown: FC<LocalizedTimeDropdownProps> = ({ items }) => {
   const [selectedLocation, setSelectedLocation] = useState<string>("New York");
   const [currentTime, setCurrentTime] = useState<string>("");
 
-  // https://reactjs.org/docs/hooks-reference.html#usememo
-  // I am using useMemo to memoize the locationToTimeZone object.
-  // This object is a mapping of location names to their respective time zones.
-  // Since this object is not dependent on any state or props, it will not change between re-renders.
-  // By memoizing it, we can ensure that the object is only created once and reused across re-renders,
-  // which can help improve performance.
   const locationToTimeZone: { [key: string]: string } = useMemo(() => {
     return {
       "New York": "America/New_York",
@@ -37,6 +31,7 @@ const LocalizedTimeDropdown: FC<LocalizedTimeDropdownProps> = ({ items }) => {
   );
 
   useEffect(() => {
+    logCurrentTime(selectedLocation); // Call immediately on mount
     const interval = setInterval(() => {
       logCurrentTime(selectedLocation);
     }, 1000);
@@ -46,9 +41,7 @@ const LocalizedTimeDropdown: FC<LocalizedTimeDropdownProps> = ({ items }) => {
   const handleLocationChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
-    const newLocation = event.target.value;
-    setSelectedLocation(newLocation);
-    logCurrentTime(newLocation);
+    setSelectedLocation(event.target.value);
   };
 
   return (
@@ -63,7 +56,6 @@ const LocalizedTimeDropdown: FC<LocalizedTimeDropdownProps> = ({ items }) => {
         </select>
       </div>
       <div className="time-container">
-        <p>Current time in {selectedLocation}:</p>
         <div className="time-display">{currentTime}</div>
       </div>
     </div>
