@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, FC, useMemo } from "react";
+import { useState, useEffect, useCallback, FC, useMemo } from "react";
 import "./DigitalClockDisplay.css";
 import { ClockDisplayProps } from "../../interfaces";
 
