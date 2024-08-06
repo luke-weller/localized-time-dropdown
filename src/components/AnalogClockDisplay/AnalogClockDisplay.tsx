@@ -2,10 +2,7 @@ import { FC, useState, useEffect } from "react";
 import Clock from "react-clock";
 import "react-clock/dist/Clock.css";
 import "./AnalogClockDisplay.css";
-
-interface ClockDisplayProps {
-  location: string;
-}
+import { ClockDisplayProps } from "../../interfaces";
 
 const AnalogClockDisplay: FC<ClockDisplayProps> = ({ location }) => {
   const [time, setTime] = useState(new Date());
@@ -48,7 +45,7 @@ const AnalogClockDisplay: FC<ClockDisplayProps> = ({ location }) => {
         hourMarksLength={12}
         minuteMarksWidth={1}
         minuteMarksLength={6}
-        size={Math.min(window.innerWidth * 0.8, window.innerHeight * 0.8)} // Adjust the size to be 80% of the screen width or height, whichever is smaller
+        size={Math.min(window.innerWidth * 0.8, window.innerHeight * 0.8)}
       />
     </div>
   );
