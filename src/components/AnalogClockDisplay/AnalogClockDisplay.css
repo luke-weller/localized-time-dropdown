@@ -2,10 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh; /* Adjust as needed */
+  height: 30vh;
+  min-height: 140px;
 }
 
 .clock {
-  width: 300px; /* Adjust size as needed */
-  height: 300px; /* Adjust size as needed */
+  width: 300px;
+  height: 300px;
 }
