@@ -1,7 +1,8 @@
-export interface LocalizedTimeDropdownProps {
-  items: string[];
+export interface LocationSelectProps {
+  selectedLocation: string;
+  onLocationChange: (location: string) => void;
 }
 
-export interface LocalizedTimeDropdownState {
-  selectedLanguage: string;
+export interface ClockDisplayProps {
+  location: string;
 }

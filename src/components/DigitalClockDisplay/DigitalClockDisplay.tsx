@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useCallback, FC, useMemo } from "react";
 import "./DigitalClockDisplay.css";
-
-interface ClockDisplayProps {
-  location: string;
-}
+import { ClockDisplayProps } from "../../interfaces";
 
 const DigitalClockDisplay: FC<ClockDisplayProps> = ({ location }) => {
   const [currentTime, setCurrentTime] = useState<string>("");

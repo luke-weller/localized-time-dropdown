@@ -1,10 +1,6 @@
 import React, { FC } from "react";
 import "./LocationSelect.css";
-
-interface LocationSelectProps {
-  selectedLocation: string;
-  onLocationChange: (location: string) => void;
-}
+import { LocationSelectProps } from "../../interfaces";
 
 const LocationSelect: FC<LocationSelectProps> = ({
   selectedLocation,
