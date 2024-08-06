@@ -32,21 +32,23 @@ const AnalogClockDisplay: FC<ClockDisplayProps> = ({ location }) => {
 
   return (
     <div className="clock-container">
-      <Clock
-        className={"clock"}
-        value={time}
-        hourHandWidth={8}
-        hourHandLength={60}
-        minuteHandWidth={4}
-        minuteHandLength={80}
-        secondHandWidth={2}
-        secondHandLength={90}
-        hourMarksWidth={2}
-        hourMarksLength={12}
-        minuteMarksWidth={1}
-        minuteMarksLength={6}
-        size={Math.min(window.innerWidth * 0.8, window.innerHeight * 0.8)}
-      />
+      <div data-testid="clock-container">
+        <Clock
+          className={"clock"}
+          value={time}
+          hourHandWidth={8}
+          hourHandLength={60}
+          minuteHandWidth={4}
+          minuteHandLength={80}
+          secondHandWidth={2}
+          secondHandLength={90}
+          hourMarksWidth={2}
+          hourMarksLength={12}
+          minuteMarksWidth={1}
+          minuteMarksLength={6}
+          size={Math.min(window.innerWidth * 0.8, window.innerHeight * 0.8)}
+        />
+      </div>
     </div>
   );
 };
