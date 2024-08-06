@@ -1,6 +1,19 @@
 .clock-display {
   font-size: 3em;
+
+  @media (max-width: 768px) {
+    font-size: 2em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5em;
+  }
+
   font-weight: bold;
   text-align: center;
-  margin: 20px 0;
+  position: fixed;
+  bottom: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }

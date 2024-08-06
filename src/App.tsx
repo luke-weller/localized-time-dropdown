@@ -8,15 +8,21 @@ const App: FC = () => {
   const [selectedLocation, setSelectedLocation] = useState<string>("New York");
 
   return (
-    <div className="container">
-      <LocationSelect
-        selectedLocation={selectedLocation}
-        onLocationChange={setSelectedLocation}
-      />
+    <>
+      <div className="container">
+        <LocationSelect
+          selectedLocation={selectedLocation}
+          onLocationChange={setSelectedLocation}
+        />
+      </div>
 
-      <AnalogClockDisplay location={selectedLocation} />
-      <DigitalClockDisplay location={selectedLocation} />
-    </div>
+      <div className="container">
+        <DigitalClockDisplay location={selectedLocation} />
+      </div>
+      <div>
+        <AnalogClockDisplay location={selectedLocation} />
+      </div>
+    </>
   );
 };
 
